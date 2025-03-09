@@ -10,19 +10,32 @@ let package = Package(
         .macOS(.v14)
     ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "NeugelbUIComponents",
             targets: ["NeugelbUIComponents"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/NeugelbTest/neugelb-ios-fonts", branch: "main"),
+        .package(url: "https://github.com/NeugelbTest/neugelb-ios-colors", branch: "main"),
+        .package(url: "https://github.com/NeugelbTest/neugelb-ios-images", branch: "main"),
+    ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "NeugelbUIComponents"),
+            name: "NeugelbUIComponents",
+            dependencies: [
+                .product(name: "NeugelbFonts", package: "neugelb-ios-fonts"),
+                .product(name: "NeugelbColors", package: "neugelb-ios-colors"),
+                .product(name: "NeugelbImages", package: "neugelb-ios-images")
+            ],
+            path: "./Sources"
+        ),
         .testTarget(
             name: "NeugelbUIComponentsTests",
             dependencies: ["NeugelbUIComponents"]
         ),
     ]
 )
+
+
+
+
