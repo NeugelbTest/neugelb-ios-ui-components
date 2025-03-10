@@ -35,6 +35,34 @@ public extension View {
         frame(maxWidth: .infinity, alignment: alignment)
     }
     
+    @MainActor
+    func alwaysBounceVertical(_ value: Bool) -> some View {
+        if #available(iOS 16.4, *) {
+            return scrollBounceBehavior(value ? .always : .basedOnSize, axes: .vertical)
+        } else {
+            return introspectScrollView {
+                $0.alwaysBounceVertical = value
+            }
+        }
+    }
+    
+    @MainActor
+    func removeListSectionSpacing() -> some View {
+        if #available(iOS 17, *) {
+            return listSectionSpacing(0)
+        } else {
+            return self
+        }
+    }
+
+    func hideScrollContentBackground() -> some View {
+        if #available(iOS 16, *) {
+            return scrollContentBackground(.hidden)
+        } else {
+            return self
+        }
+    }
+    
 }
 
 // MARK: - LogicLoader
