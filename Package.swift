@@ -17,7 +17,8 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/NeugelbTest/neugelb-ios-fonts", branch: "main"),
         .package(url: "https://github.com/NeugelbTest/neugelb-ios-colors", branch: "main"),
-        .package(url: "https://github.com/NeugelbTest/neugelb-ios-images", branch: "main"),
+        .package(url: "https://github.com/NeugelbTest/neugelb-ios-images", branch: "feature/addMovieList"),
+        .package(url: "https://github.com/ciaranrobrien/SwiftUIScrollOffset", .upToNextMajor(from: "1.3.0")),
     ],
     targets: [
         .target(
@@ -25,7 +26,8 @@ let package = Package(
             dependencies: [
                 .product(name: "NeugelbFonts", package: "neugelb-ios-fonts"),
                 .product(name: "NeugelbColors", package: "neugelb-ios-colors"),
-                .product(name: "NeugelbImages", package: "neugelb-ios-images")
+                .product(name: "NeugelbImages", package: "neugelb-ios-images"),
+                .product(name: "SwiftUIScrollOffset", package: "SwiftUIScrollOffset"),
             ],
             path: "./Sources"
         ),
