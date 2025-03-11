@@ -22,7 +22,7 @@ public struct NeugelbNavigationListView<Content: View> {
 
     @State private var largeTitleViewFrame = CGRect.zero
 
-    @ScrollOffsetProxy(.top, id: "JucrNavigationListView_offset") private var listOffsetProxy
+    @ScrollOffsetProxy(.top, id: "NeugelbNavigationListView_offset") private var listOffsetProxy
 
     private var isMainTitleHidden: Bool {
         let scrollYOffset = listOffsetProxy.offset
@@ -161,7 +161,7 @@ extension NeugelbNavigationListView: View {
             content()
         }
         .backgroundColor(listBackgroundColor)
-        .scrollOffsetID("JucrNavigationListView_offset")
+        .scrollOffsetID("NeugelbNavigationListView_offset")
     }
 
 }

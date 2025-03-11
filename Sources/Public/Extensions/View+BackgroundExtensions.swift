@@ -5,7 +5,7 @@ public extension View {
 
     /// Layers the given color behind this view.
     /// - Parameter colorAsset: The color to draw behind this view.
-    func backgroundColor(_ colorAsset: ColorAsset = .grey10) -> some View {
+    func backgroundColor(_ colorAsset: ColorAsset = .clear) -> some View {
         modifier(BackgroundColorByAsset(
             colorAsset: colorAsset,
             ignoredSafeAreaRegions: .all,
@@ -19,7 +19,7 @@ public extension View {
     ///   - ignoredSafeAreaRegions: The kinds of rectangles removed from the safe area that should be ignored (i.e. added back to the safe area of the new child view).
     ///   - ignoredSafeAreaEdges: The edges of the view that may be outset. Any edges not in this set will be unchanged, even if that edge is abutting a safe area listed in `regions`.
     func backgroundColor(
-        _ colorAsset: ColorAsset = .grey10,
+        _ colorAsset: ColorAsset = .clear,
         ignoredSafeAreaRegions: SafeAreaRegions = .all,
         ignoredSafeAreaEdges: Edge.Set
     ) -> some View {
