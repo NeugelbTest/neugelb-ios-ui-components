@@ -51,7 +51,7 @@ extension NeugelbNavigationBarBottomTextView: View {
             HStack {
                 NeugelbText(
                     text: title,
-                    weight: .semibold,
+                    weight: .medium,
                     size: 40
                 )
                 Spacer()
@@ -68,7 +68,7 @@ extension NeugelbNavigationBarBottomTextView: View {
                     text: subtitle,
                     weight: .regular,
                     size: 14,
-                    textColor: .grey100,
+                    textColor: .grey70,
                     lineSpacing: 8
                 )
                 Spacer()
@@ -86,7 +86,7 @@ extension NeugelbNavigationBarBottomTextView: View {
         subtitle: PreviewAsset.loremIpsum,
         backgroundColor: .clear
     )?
-    .prepareForPreview(backgroundColor: .grey50)
+    .prepareForPreview()
 }
 
 #Preview("Red Background") {
@@ -95,5 +95,5 @@ extension NeugelbNavigationBarBottomTextView: View {
         subtitle: PreviewAsset.loremIpsum,
         backgroundColor: .red100
     )?
-    .prepareForPreview(backgroundColor: .grey50)
+    .prepareForPreview()
 }
