@@ -25,7 +25,7 @@ extension MovieListItem: View {
         Button(action: {
             model.detailButtonActionHandler?(model.id)
         }) {
-            HStack(spacing: .spacing12) {
+            HStack(alignment: .top, spacing: .spacing12) {
                 NeugelbImageView(image: $image)
                     .frame(
                         width: Constant.imageWidth,
@@ -41,9 +41,8 @@ extension MovieListItem: View {
                     Spacer()
                     
                     informationView(image: ImageAsset.star, title: model.rateString)
-                    informationView(image: ImageAsset.ticket, title: model.genre)
-                    informationView(image: ImageAsset.calendar, title: model.yearString)
-                    informationView(image: ImageAsset.clock, title: model.timeString)
+                    informationView(image: ImageAsset.calendar, title: model.releaseDate)
+                    informationView(image: ImageAsset.ticket, title: model.language)
                 }
             }
             .fillWidth()

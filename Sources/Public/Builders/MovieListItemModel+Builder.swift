@@ -9,12 +9,12 @@ public extension MovieListItem.Model {
         // MARK: - Properties
 
         private(set) var id : String = ""
-        private(set) var name: String?
+        private(set) var title: String?
         private(set) var imageUrl: String?
         private(set) var rate: Double?
-        private(set) var genre: String?
-        private(set) var year: Int?
-        private(set) var time: Int?
+        private(set) var overview: String?
+        private(set) var releaseDate: String?
+        private(set) var language: String?
         private(set) var imageService: ImageService? = nil
         private(set) var detailButtonActionHandler: ValueHandler<String>?
 
@@ -34,8 +34,8 @@ public extension MovieListItem.Model.Builder {
         return self
     }
 
-    func with(name: String) -> Self {
-        self.name = name
+    func with(title: String) -> Self {
+        self.title = title
         return self
     }
     
@@ -49,18 +49,18 @@ public extension MovieListItem.Model.Builder {
         return self
     }
     
-    func with(genre: String) -> Self {
-        self.genre = genre
+    func with(overview: String) -> Self {
+        self.overview = overview
         return self
     }
     
-    func with(year: Int) -> Self {
-        self.year = year
+    func with(releaseDate: Date) -> Self {
+        self.releaseDate = releaseDate.formattedString()
         return self
     }
     
-    func with(time: Int?) -> Self {
-        self.time = time
+    func with(language: String) -> Self {
+        self.language = language
         return self
     }
 
@@ -77,12 +77,12 @@ public extension MovieListItem.Model.Builder {
     func build() -> MovieListItem.Model {
         .init(
             id: id,
-            name: name,
+            title: title,
             imageUrl: imageUrl,
             rate: rate,
-            genre: genre,
-            year: year,
-            time: time,
+            overview: overview,
+            releaseDate: releaseDate,
+            language: language,
             imageService: imageService,
             detailButtonActionHandler: detailButtonActionHandler
         )

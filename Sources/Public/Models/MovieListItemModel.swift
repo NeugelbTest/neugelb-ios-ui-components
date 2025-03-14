@@ -8,12 +8,12 @@ public extension MovieListItem {
         // MARK: - Properties
 
         public let id: String
-        public let name: String?
+        public let title: String?
         public let imageUrl: String?
         public let rate: Double?
-        public let genre: String?
-        public let year: Int?
-        public let time: Int?
+        public let overview: String?
+        public let releaseDate: String?
+        public let language: String?
         public let imageService: ImageService?
         public let detailButtonActionHandler: ValueHandler<String>?
         
@@ -29,16 +29,6 @@ public extension MovieListItem {
             } catch {
                 return .failed
             }
-        }
-        
-        var yearString: String? {
-            guard let year else { return nil }
-            return "\(year)"
-        }
-        
-        var timeString: String? {
-            guard let time else { return nil }
-            return "\(time) minutes"
         }
         
         var rateString: String? {
