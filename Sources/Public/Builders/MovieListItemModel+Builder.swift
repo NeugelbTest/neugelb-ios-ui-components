@@ -8,7 +8,7 @@ public extension MovieListItem.Model {
 
         // MARK: - Properties
 
-        private(set) var id: String = ""
+        private(set) var id: Int = 0
         private(set) var title: String?
         private(set) var imageUrl: String?
         private(set) var rate: Double?
@@ -16,7 +16,7 @@ public extension MovieListItem.Model {
         private(set) var releaseDate: String?
         private(set) var language: String?
         private(set) var imageService: ImageService?
-        private(set) var detailButtonActionHandler: ValueHandler<String>?
+        private(set) var detailButtonActionHandler: ValueHandler<Int>?
 
         // MARK: - Initialization
 
@@ -29,7 +29,7 @@ public extension MovieListItem.Model {
 
 public extension MovieListItem.Model.Builder {
 
-    func with(id: String) -> Self {
+    func with(id: Int) -> Self {
         self.id = id
         return self
     }
@@ -69,7 +69,7 @@ public extension MovieListItem.Model.Builder {
         return self
     }
 
-    func with(detailButtonActionHandler: ValueHandler<String>?) -> Self {
+    func with(detailButtonActionHandler: ValueHandler<Int>?) -> Self {
         self.detailButtonActionHandler = detailButtonActionHandler
         return self
     }

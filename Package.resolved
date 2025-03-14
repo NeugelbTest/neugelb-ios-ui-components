@@ -23,8 +23,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/NeugelbTest/neugelb-ios-images",
       "state" : {
-        "branch" : "feature/addMovieList",
-        "revision" : "8b8b0a95748ff36d5599d9fbd7b438f58b00630e"
+        "branch" : "main",
+        "revision" : "9344711f9162ed03e1033dc570d56a450205d4b9"
+      }
+    },
+    {
+      "identity" : "neugelb-ios-localized",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/NeugelbTest/neugelb-ios-localized",
+      "state" : {
+        "branch" : "main",
+        "revision" : "519ad3385a040934e3933b850af3f044ffd5075c"
       }
     },
     {
@@ -32,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/NeugelbTest/neugelb-ios-network",
       "state" : {
-        "branch" : "feature/addMovieService",
-        "revision" : "11ee421638cd7db561f3cec7a3c6366ae99f02b4"
+        "branch" : "main",
+        "revision" : "5dc7e7fe30bd0b2e6e7cff18c86755a0dfc18c13"
       }
     },
     {

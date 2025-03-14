@@ -7,7 +7,7 @@ public extension MovieListItem {
 
         // MARK: - Properties
 
-        public let id: String
+        public let id: Int
         public let title: String?
         public let imageUrl: String?
         public let rate: Double?
@@ -15,7 +15,7 @@ public extension MovieListItem {
         public let releaseDate: String?
         public let language: String?
         public let imageService: ImageService?
-        public let detailButtonActionHandler: ValueHandler<String>?
+        public let detailButtonActionHandler: ValueHandler<Int>?
 
         func fetchImage() async -> ImageStatus {
             guard let imageService = imageService, let url = imageUrl else {

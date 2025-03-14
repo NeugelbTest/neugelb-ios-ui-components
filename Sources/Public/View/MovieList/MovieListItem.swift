@@ -1,5 +1,6 @@
 import NeugelbColors
 import NeugelbImages
+import NeugelbLocalized
 import SwiftUI
 
 public struct MovieListItem {
@@ -34,17 +35,23 @@ extension MovieListItem: View {
                     .clipped()
                     .cornerRadius(16)
 
-                VStack(alignment: .leading, spacing: .spacing4) {
+                VStack(alignment: .leading, spacing: .spacing8) {
                     titleView
                         .padding(.top, .spacing4)
 
                     Spacer()
 
-                    informationView(image: ImageAsset.star, title: model.rateString)
-                    informationView(image: ImageAsset.calendar, title: model.releaseDate)
-                    informationView(image: ImageAsset.ticket, title: model.language)
-                        .padding(.bottom, .spacing8)
+                    if let rate = model.rateString {
+                        NeugelbQuickInfo(model: .star, value: rate)
+                    }
+                    if let releaseDate = model.releaseDate {
+                        NeugelbQuickInfo(model: .calendar, value: releaseDate)
+                    }
+                    if let language = model.language {
+                        NeugelbQuickInfo(model: .ticket, value: language)
+                    }
                 }
+                .padding(.bottom, .spacing8)
             }
             .fillWidth()
         }
@@ -55,26 +62,9 @@ extension MovieListItem: View {
         })
     }
 
-    @ViewBuilder
-    private func informationView(image: ImageAsset.Asset, title: String?, color: ColorAsset = .grey10) -> some View {
-        if let title {
-            HStack {
-                image.image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: Constant.iconSize, height: Constant.iconSize)
-                NeugelbText(
-                    text: title,
-                    size: 12,
-                    textColor: color
-                )
-            }
-        }
-    }
-
     private var titleView: some View {
         NeugelbText(
-            text: model.title ?? "Untitle",
+            text: model.title ?? Localizable.untitle,
             size: 16,
             textColor: .grey10
         )
