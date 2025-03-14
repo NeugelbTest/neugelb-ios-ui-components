@@ -43,6 +43,7 @@ extension MovieListItem: View {
                     informationView(image: ImageAsset.star, title: model.rateString)
                     informationView(image: ImageAsset.calendar, title: model.releaseDate)
                     informationView(image: ImageAsset.ticket, title: model.language)
+                        .padding(.bottom, .spacing8)
                 }
             }
             .fillWidth()
