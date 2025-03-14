@@ -16,7 +16,7 @@ public extension MovieListItem {
         public let language: String?
         public let imageService: ImageService?
         public let detailButtonActionHandler: ValueHandler<String>?
-        
+
         func fetchImage() async -> ImageStatus {
             guard let imageService = imageService, let url = imageUrl else {
                 return .failed
@@ -30,7 +30,7 @@ public extension MovieListItem {
                 return .failed
             }
         }
-        
+
         var rateString: String? {
             guard let rate else { return nil }
             return "\(rate)"

@@ -1,7 +1,7 @@
 import Foundation
 
 public enum ViewSpacing: CGFloat {
-    
+
     /// 0px / 0/0pt / 0.0rem
     case zero = 0
 
@@ -28,7 +28,7 @@ public enum ViewSpacing: CGFloat {
 
     /// 48px / 36pt / 3rem
     case spacing48 = 48
-    
+
     /// 40px / 36pt / 3.5rem
     case spacing40 = 40
 

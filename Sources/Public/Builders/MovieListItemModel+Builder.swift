@@ -8,14 +8,14 @@ public extension MovieListItem.Model {
 
         // MARK: - Properties
 
-        private(set) var id : String = ""
+        private(set) var id: String = ""
         private(set) var title: String?
         private(set) var imageUrl: String?
         private(set) var rate: Double?
         private(set) var overview: String?
         private(set) var releaseDate: String?
         private(set) var language: String?
-        private(set) var imageService: ImageService? = nil
+        private(set) var imageService: ImageService?
         private(set) var detailButtonActionHandler: ValueHandler<String>?
 
         // MARK: - Initialization
@@ -38,7 +38,7 @@ public extension MovieListItem.Model.Builder {
         self.title = title
         return self
     }
-    
+
     func with(imageUrl: String?) -> Self {
         self.imageUrl = imageUrl
         return self
@@ -48,17 +48,17 @@ public extension MovieListItem.Model.Builder {
         self.rate = rate
         return self
     }
-    
+
     func with(overview: String) -> Self {
         self.overview = overview
         return self
     }
-    
+
     func with(releaseDate: Date) -> Self {
         self.releaseDate = releaseDate.formattedString()
         return self
     }
-    
+
     func with(language: String) -> Self {
         self.language = language
         return self
@@ -89,4 +89,3 @@ public extension MovieListItem.Model.Builder {
     }
 
 }
-

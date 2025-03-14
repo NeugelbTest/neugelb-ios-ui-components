@@ -12,7 +12,7 @@ public extension View {
             ignoredSafeAreaEdges: nil
         ))
     }
-    
+
     /// Layers the given color behind this view. The color is expanded out of its safe area.
     /// - Parameters:
     ///   - colorAsset: The color to draw behind this view.

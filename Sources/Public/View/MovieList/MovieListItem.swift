@@ -33,13 +33,13 @@ extension MovieListItem: View {
                     )
                     .clipped()
                     .cornerRadius(16)
-                
+
                 VStack(alignment: .leading, spacing: .spacing4) {
                     titleView
                         .padding(.top, .spacing4)
-                    
+
                     Spacer()
-                    
+
                     informationView(image: ImageAsset.star, title: model.rateString)
                     informationView(image: ImageAsset.calendar, title: model.releaseDate)
                     informationView(image: ImageAsset.ticket, title: model.language)
@@ -99,7 +99,7 @@ private extension MovieListItem {
 #Preview {
     ScrollView {
         VStack(spacing: .spacing8) {
-            
+
             MovieListItem(model: PreviewAsset.movieListItemModel)
             MovieListItem(model: PreviewAsset.movieListItemModel)
             MovieListItem(model: PreviewAsset.movieListItemModel)
