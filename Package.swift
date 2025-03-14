@@ -20,7 +20,7 @@ let package = Package(
         .package(url: "https://github.com/NeugelbTest/neugelb-ios-images", branch: "main"),
         .package(url: "https://github.com/NeugelbTest/neugelb-ios-network", branch: "main"),
         .package(url: "https://github.com/NeugelbTest/neugelb-ios-localized", branch: "main"),
-        
+
         .package(url: "https://github.com/ciaranrobrien/SwiftUIScrollOffset", .upToNextMajor(from: "1.3.0"))
     ],
     targets: [

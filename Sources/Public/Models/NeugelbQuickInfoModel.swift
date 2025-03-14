@@ -3,12 +3,12 @@ import NeugelbImages
 import NeugelbColors
 
 public extension NeugelbQuickInfo {
-    
+
     enum Model {
         case star
         case calendar
         case ticket
-        
+
         var image: ImageAsset.Asset {
             switch self {
             case .star:
@@ -19,7 +19,7 @@ public extension NeugelbQuickInfo {
                 ImageAsset.ticket
             }
         }
-        
+
         var color: ColorAsset {
             switch self {
             case .star:

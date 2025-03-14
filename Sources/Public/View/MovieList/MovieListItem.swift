@@ -40,7 +40,7 @@ extension MovieListItem: View {
                         .padding(.top, .spacing4)
 
                     Spacer()
-                    
+
                     if let rate = model.rateString {
                         NeugelbQuickInfo(model: .star, value: rate)
                     }
