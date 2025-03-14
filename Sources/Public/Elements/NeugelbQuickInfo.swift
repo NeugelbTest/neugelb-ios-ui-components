@@ -12,16 +12,16 @@ public struct NeugelbQuickInfo {
 
     // MARK: - Properties
 
-    let type: QuickInfoType
+    let model: NeugelbQuickInfo.Model
     let value: String
 
     // MARK: - Initialization
 
     public init(
-        type: QuickInfoType,
+        model: NeugelbQuickInfo.Model,
         value: String
     ) {
-        self.type = type
+        self.model = model
         self.value = value
     }
 
@@ -33,16 +33,16 @@ extension NeugelbQuickInfo: View {
 
     public var body: some View {
         HStack(spacing: .spacing8) {
-            type.image.image
+            model.image.image
                 .renderingMode(.template)
                 .resizable()
-                .foregroundColor(type.color)
+                .foregroundColor(model.color)
                 .aspectRatio(contentMode: .fill)
                 .frame(width: Constant.iconSize, height: Constant.iconSize)
             NeugelbText(
                 text: value,
                 size: 12,
-                textColor: type.color
+                textColor: model.color
             )
         }
     }
@@ -63,9 +63,9 @@ private extension NeugelbQuickInfo {
 
 #Preview {
     VStack {
-        NeugelbQuickInfo(type: .star, value: "9.6")
-        NeugelbQuickInfo(type: .calendar, value: "2030-01-23")
-        NeugelbQuickInfo(type: .ticket, value: "en")
+        NeugelbQuickInfo(model: .star, value: "9.6")
+        NeugelbQuickInfo(model: .calendar, value: "2030-01-23")
+        NeugelbQuickInfo(model: .ticket, value: "en")
     }
     .prepareForPreview()
 }
