@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import NeugelbNetwork
 
 public extension MovieListItem.Model {
 
