@@ -1,4 +1,5 @@
 import Foundation
+import NeugelbNetwork
 
 public extension MovieListItem {
 
@@ -17,8 +18,17 @@ public extension MovieListItem {
         public let detailButtonActionHandler: ValueHandler<String>?
         
         func fetchImage() async -> ImageStatus {
-            guard let imageService else { return .failed }
-            return await imageService.loadImage(from: imageUrl ?? "")
+            guard let imageService = imageService, let url = imageUrl else {
+                return .failed
+            }
+            do {
+                guard let image = try await imageService.fetchImage(from: url) else {
+                    return .failed
+                }
+                return .success(image)
+            } catch {
+                return .failed
+            }
         }
         
         var yearString: String? {

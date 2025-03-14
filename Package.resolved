@@ -28,6 +28,15 @@
       }
     },
     {
+      "identity" : "neugelb-ios-network",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/NeugelbTest/neugelb-ios-network",
+      "state" : {
+        "branch" : "feature/addMovieService",
+        "revision" : "007c7387b0ef567ac65c9078624155ec84ccba4f"
+      }
+    },
+    {
       "identity" : "swiftui-introspect",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/siteline/swiftui-introspect",
