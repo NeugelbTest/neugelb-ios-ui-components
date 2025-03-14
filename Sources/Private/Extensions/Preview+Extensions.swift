@@ -18,7 +18,7 @@ enum PreviewAsset {
     }
 
     static let movieListItemModel = MovieListItem.Model.Builder()
-        .with(id: "123456789")
+        .with(id: 123456789)
         .with(title: "Spiderman")
         .with(imageUrl: "")
         .with(rate: 9.5)
