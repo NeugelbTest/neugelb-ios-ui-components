@@ -1,5 +1,6 @@
 import NeugelbColors
 import NeugelbImages
+import NeugelbLocalized
 import SwiftUI
 
 public struct MovieListItem {
@@ -63,7 +64,7 @@ extension MovieListItem: View {
 
     private var titleView: some View {
         NeugelbText(
-            text: model.title ?? "Untitle",
+            text: model.title ?? Localizable.untitle,
             size: 16,
             textColor: .grey10
         )

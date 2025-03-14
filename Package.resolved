@@ -28,6 +28,15 @@
       }
     },
     {
+      "identity" : "neugelb-ios-localized",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/NeugelbTest/neugelb-ios-localized",
+      "state" : {
+        "branch" : "main",
+        "revision" : "519ad3385a040934e3933b850af3f044ffd5075c"
+      }
+    },
+    {
       "identity" : "neugelb-ios-network",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/NeugelbTest/neugelb-ios-network",
