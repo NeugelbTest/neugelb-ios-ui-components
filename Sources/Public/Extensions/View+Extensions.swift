@@ -2,30 +2,30 @@ import SwiftUI
 import NeugelbFonts
 
 public extension View {
-    
+
     func onLoad(closure: () -> Void) -> some View {
         LogicLoader(closure, content: self)
     }
-    
+
     func eraseToAnyView() -> AnyView {
         AnyView(self)
     }
-    
+
     func hidden(_ shouldHide: Bool) -> some View {
         opacity(shouldHide ? 0 : 1)
     }
-    
+
     func addUnderline() -> some View {
         if #available(iOS 16.0, *) {
             return self.underline()
         }
         return self
     }
-    
+
     func font(weight: NeugelbFonts.FontWeightName, size: Int) -> some View {
         font(NeugelbFonts.brandingFontWith(weight: weight, size: size))
     }
-    
+
     /// A convenient method that allows you to easily create a view that occupies the full width of its parent container, using an optional alignment parameter to specify the horizontal alignment within the available space.
     ///
     /// This method relies on the `frame(maxWidth:alignment:)` modifier internally to achieve the desired behavior.
@@ -34,7 +34,35 @@ public extension View {
     func fillWidth(with alignment: Alignment = .leading) -> some View {
         frame(maxWidth: .infinity, alignment: alignment)
     }
-    
+
+    @MainActor
+    func alwaysBounceVertical(_ value: Bool) -> some View {
+        if #available(iOS 16.4, *) {
+            return scrollBounceBehavior(value ? .always : .basedOnSize, axes: .vertical)
+        } else {
+            return introspectScrollView {
+                $0.alwaysBounceVertical = value
+            }
+        }
+    }
+
+    @MainActor
+    func removeListSectionSpacing() -> some View {
+        if #available(iOS 17, *) {
+            return listSectionSpacing(0)
+        } else {
+            return self
+        }
+    }
+
+    func hideScrollContentBackground() -> some View {
+        if #available(iOS 16, *) {
+            return scrollContentBackground(.hidden)
+        } else {
+            return self
+        }
+    }
+
 }
 
 // MARK: - LogicLoader

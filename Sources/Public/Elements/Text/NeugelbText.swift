@@ -51,11 +51,10 @@ extension NeugelbText: View {
 
 }
 
-
 // MARK: - Preview
 
 #Preview {
-    
+
     VStack(alignment: .leading, spacing: .spacing16) {
         NeugelbText(
             text: "Copy Text",
