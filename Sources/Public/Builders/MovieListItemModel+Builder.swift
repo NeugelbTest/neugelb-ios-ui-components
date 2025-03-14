@@ -54,12 +54,12 @@ public extension MovieListItem.Model.Builder {
         return self
     }
 
-    func with(releaseDate: Date) -> Self {
-        self.releaseDate = releaseDate.formattedString()
+    func with(releaseDate: Date?) -> Self {
+        self.releaseDate = releaseDate?.formattedString()
         return self
     }
 
-    func with(language: String) -> Self {
+    func with(language: String?) -> Self {
         self.language = language
         return self
     }
