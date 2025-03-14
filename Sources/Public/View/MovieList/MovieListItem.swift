@@ -73,7 +73,7 @@ extension MovieListItem: View {
 
     private var titleView: some View {
         NeugelbText(
-            text: model.name ?? "Untitle",
+            text: model.title ?? "Untitle",
             size: 16,
             textColor: .grey10
         )

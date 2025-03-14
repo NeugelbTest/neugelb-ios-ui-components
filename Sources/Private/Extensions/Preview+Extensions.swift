@@ -19,12 +19,12 @@ enum PreviewAsset {
 
     static let movieListItemModel = MovieListItem.Model.Builder()
         .with(id: "123456789")
-        .with(name: "Spiderman")
+        .with(title: "Spiderman")
         .with(imageUrl: "")
         .with(rate: 9.5)
-        .with(genre: "Action")
-        .with(year: 2019)
-        .with(time: 139)
+        .with(overview: loremIpsum)
+        .with(releaseDate: Date())
+        .with(language: "en")
         .build()
 
 }
