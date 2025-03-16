@@ -2,7 +2,10 @@ import NeugelbColors
 import NeugelbImages
 import SwiftUI
 
-public struct NeugelbLoadingView {}
+public struct NeugelbLoadingView {
+    
+    public init() {}
+}
 
 // MARK: - View
 
